@@ -1,0 +1,100 @@
+Mar  6 11:14:01 ubuntu-2gb-fsn1-1 systemd[1]: Reloading.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-networkd.service:31: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: systemd-networkd.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-config.service:8: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init.service:19: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init-local.service:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-journald-dev-log.socket:28: Unknown key name 'Timestamping' in section 'Socket', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-resolved.service:33: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: systemd-resolved.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init.target:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-final.service:9: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:28: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:29: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:30: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-networkd.socket:21: Unknown key name 'PassPacketInfo' in section 'Socket', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-timesyncd.service:35: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: systemd-timesyncd.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-journald.socket:29: Unknown key name 'Timestamping' in section 'Socket', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: Reloading.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-networkd.service:31: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: systemd-networkd.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-config.service:8: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init.service:19: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init-local.service:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-journald-dev-log.socket:28: Unknown key name 'Timestamping' in section 'Socket', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-resolved.service:33: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: systemd-resolved.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init.target:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-final.service:9: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:28: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:29: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:30: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-networkd.socket:21: Unknown key name 'PassPacketInfo' in section 'Socket', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-timesyncd.service:35: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: systemd-timesyncd.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:14:02 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-journald.socket:29: Unknown key name 'Timestamping' in section 'Socket', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: Reloading.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-networkd.service:31: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: systemd-networkd.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-config.service:8: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init.service:19: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init-local.service:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-journald-dev-log.socket:28: Unknown key name 'Timestamping' in section 'Socket', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-resolved.service:33: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: systemd-resolved.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init.target:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-final.service:9: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:28: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:29: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:30: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-networkd.socket:21: Unknown key name 'PassPacketInfo' in section 'Socket', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-timesyncd.service:35: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: systemd-timesyncd.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-journald.socket:29: Unknown key name 'Timestamping' in section 'Socket', ignoring.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: lvm2-lvmpolld.socket: Succeeded.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: Closed LVM2 poll daemon socket.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: Stopping LVM2 poll daemon socket.
+Mar  6 11:14:03 ubuntu-2gb-fsn1-1 systemd[1]: Listening on LVM2 poll daemon socket.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 dbus-daemon[7951]: [session uid=0 pid=7951] Reloaded configuration
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 dbus-daemon[7951]: [session uid=0 pid=7951] Reloaded configuration
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: Stopped target NFS client services.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: rpc-statd-notify.service: Succeeded.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: Stopped Notify NFS peers of a restart.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: Stopped target rpc_pipefs.target.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: Reloading.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-networkd.service:31: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: systemd-networkd.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-config.service:8: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init.service:19: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init-local.service:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-journald-dev-log.socket:28: Unknown key name 'Timestamping' in section 'Socket', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-resolved.service:33: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: systemd-resolved.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init.target:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-final.service:9: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:28: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:29: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:30: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-networkd.socket:21: Unknown key name 'PassPacketInfo' in section 'Socket', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-timesyncd.service:35: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: systemd-timesyncd.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-journald.socket:29: Unknown key name 'Timestamping' in section 'Socket', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: Reloading.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-networkd.service:31: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: systemd-networkd.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-config.service:8: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init.service:19: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init-local.service:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-journald-dev-log.socket:28: Unknown key name 'Timestamping' in section 'Socket', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-resolved.service:33: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: systemd-resolved.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-init.target:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/cloud-final.service:9: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:28: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:29: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-sysusers.service:30: Unknown key name 'LoadCredential' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-networkd.socket:21: Unknown key name 'PassPacketInfo' in section 'Socket', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-timesyncd.service:35: Unknown key name 'ProtectProc' in section 'Service', ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: systemd-timesyncd.service: Service has a D-Bus service name specified, but is not of type dbus. Ignoring.
+Mar  6 11:15:35 ubuntu-2gb-fsn1-1 systemd[1]: /lib/systemd/system/systemd-journald.socket:29: Unknown key name 'Timestamping' in section 'Socket', ignoring.

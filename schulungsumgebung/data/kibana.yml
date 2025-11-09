@@ -1,0 +1,59 @@
+server.host: "0.0.0.0"
+server.name: "kibana"
+elasticsearch.hosts: ["http://es01:9200"]
+elasticsearch.username: "kibana_system"
+elasticsearch.password: "kibana1234"
+
+xpack.encryptedSavedObjects.encryptionKey: "f420a4151b9327dc9b274fc3f1db9cc0"
+
+xpack.fleet.packages:
+  - name: fleet_server
+    version: latest
+  - name: system
+    version: latest
+  - name: elasticsearch
+    version: latest
+  - name: kibana
+    version: latest
+xpack.fleet.agentPolicies:
+  - name: Fleet-Server-Policy
+    id: fleet-server-policy
+    namespace: default
+    package_policies:
+      - name: fleet_server-1
+        id: fleet_server-1
+        package:
+          name: fleet_server
+  
+xpack.fleet.outputs:
+  - id: fleet-default-output
+    name: default
+    type: elasticsearch
+    hosts: [ http://es01:9200 ]
+    is_default: true
+    is_default_monitoring: true
+
+# Logging-Konfiguration
+logging:
+  appenders:
+    file:
+      type: file
+      fileName: /var/log/kibana/kibana.log
+      layout:
+        type: pattern
+        pattern: "[%date][%level][%logger] %message"
+    json-file:
+      type: file
+      fileName: /var/log/kibana/kibana.json
+      layout:
+        type: json
+  root:
+    appenders: [default, file, json-file]
+    level: info
+  loggers:
+    - name: plugins
+      appenders: [file]
+      level: info
+    - name: elasticsearch
+      appenders: [file]
+      level: warn

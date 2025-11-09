@@ -1,0 +1,100 @@
+[2018-05-17T08:48:49,042][INFO ][o.e.n.Node               ] [node-uli] initializing ...
+[2018-05-17T08:48:49,704][INFO ][o.e.e.NodeEnvironment    ] [node-uli] using [1] data paths, mounts [[OS (C:)]], net usable_space [27.2gb], net total_space [119.6gb], types [NTFS]
+[2018-05-17T08:48:49,704][INFO ][o.e.e.NodeEnvironment    ] [node-uli] heap size [3.9gb], compressed ordinary object pointers [true]
+[2018-05-17T08:48:51,493][INFO ][o.e.n.Node               ] [node-uli] node name [node-uli], node ID [Fy9oeR2RTL6meGSEDjHG6A]
+[2018-05-17T08:48:51,494][INFO ][o.e.n.Node               ] [node-uli] version[6.2.4], pid[17236], build[ccec39f/2018-04-12T20:37:28.497551Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_161/25.161-b12]
+[2018-05-17T08:48:51,494][INFO ][o.e.n.Node               ] [node-uli] JVM arguments [-Xms4g, -Xmx4g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=C:\Users\UHZELL~1\AppData\Local\Temp\elasticsearch, -XX:+HeapDumpOnOutOfMemoryError, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -Xloggc:logs/gc.log, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=32, -XX:GCLogFileSize=64m, -Delasticsearch, -Des.path.home=D:\ELK\elasticsearch-6.2.4, -Des.path.conf=D:\ELK\elasticsearch-6.2.4\config]
+[2018-05-17T08:48:57,297][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [aggs-matrix-stats]
+[2018-05-17T08:48:57,299][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [analysis-common]
+[2018-05-17T08:48:57,299][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [ingest-common]
+[2018-05-17T08:48:57,299][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [lang-expression]
+[2018-05-17T08:48:57,299][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [lang-mustache]
+[2018-05-17T08:48:57,299][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [lang-painless]
+[2018-05-17T08:48:57,299][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [mapper-extras]
+[2018-05-17T08:48:57,300][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [parent-join]
+[2018-05-17T08:48:57,300][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [percolator]
+[2018-05-17T08:48:57,300][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [rank-eval]
+[2018-05-17T08:48:57,300][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [reindex]
+[2018-05-17T08:48:57,301][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [repository-url]
+[2018-05-17T08:48:57,301][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [transport-netty4]
+[2018-05-17T08:48:57,301][INFO ][o.e.p.PluginsService     ] [node-uli] loaded module [tribe]
+[2018-05-17T08:48:57,302][INFO ][o.e.p.PluginsService     ] [node-uli] loaded plugin [x-pack-core]
+[2018-05-17T08:48:57,302][INFO ][o.e.p.PluginsService     ] [node-uli] loaded plugin [x-pack-deprecation]
+[2018-05-17T08:48:57,302][INFO ][o.e.p.PluginsService     ] [node-uli] loaded plugin [x-pack-graph]
+[2018-05-17T08:48:57,302][INFO ][o.e.p.PluginsService     ] [node-uli] loaded plugin [x-pack-logstash]
+[2018-05-17T08:48:57,303][INFO ][o.e.p.PluginsService     ] [node-uli] loaded plugin [x-pack-ml]
+[2018-05-17T08:48:57,303][INFO ][o.e.p.PluginsService     ] [node-uli] loaded plugin [x-pack-monitoring]
+[2018-05-17T08:48:57,303][INFO ][o.e.p.PluginsService     ] [node-uli] loaded plugin [x-pack-security]
+[2018-05-17T08:48:57,303][INFO ][o.e.p.PluginsService     ] [node-uli] loaded plugin [x-pack-upgrade]
+[2018-05-17T08:48:57,304][INFO ][o.e.p.PluginsService     ] [node-uli] loaded plugin [x-pack-watcher]
+[2018-05-17T08:49:05,031][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [controller/12564] [Main.cc@128] controller (64 bit): Version 6.2.4 (Build 524e7fe231abc1) Copyright (c) 2018 Elasticsearch BV
+[2018-05-17T08:49:07,924][DEBUG][o.e.a.ActionModule       ] Using REST wrapper from plugin org.elasticsearch.xpack.security.Security
+[2018-05-17T08:49:09,889][INFO ][o.e.d.DiscoveryModule    ] [node-uli] using discovery type [zen]
+[2018-05-17T08:49:12,203][INFO ][o.e.n.Node               ] [node-uli] initialized
+[2018-05-17T08:49:12,204][INFO ][o.e.n.Node               ] [node-uli] starting ...
+[2018-05-17T08:49:13,256][INFO ][o.e.t.TransportService   ] [node-uli] publish_address {192.168.50.79:9300}, bound_addresses {192.168.50.79:9300}
+[2018-05-17T08:49:13,451][INFO ][o.e.b.BootstrapChecks    ] [node-uli] bound or publishing to a non-loopback address, enforcing bootstrap checks
+[2018-05-17T08:49:17,554][INFO ][o.e.c.s.ClusterApplierService] [node-uli] detected_master {node-dieter}{j2obEg2uTWeGCvjIatawbQ}{5VLxoXOuSpSNiLqOrTWa3Q}{192.168.50.121}{192.168.50.121:9300}{ml.machine_memory=17049448448, ml.max_open_jobs=20, ml.enabled=true}, added {{node-dieter}{j2obEg2uTWeGCvjIatawbQ}{5VLxoXOuSpSNiLqOrTWa3Q}{192.168.50.121}{192.168.50.121:9300}{ml.machine_memory=17049448448, ml.max_open_jobs=20, ml.enabled=true},}, reason: apply cluster state (from master [master {node-dieter}{j2obEg2uTWeGCvjIatawbQ}{5VLxoXOuSpSNiLqOrTWa3Q}{192.168.50.121}{192.168.50.121:9300}{ml.machine_memory=17049448448, ml.max_open_jobs=20, ml.enabled=true} committed version [17]])
+[2018-05-17T08:49:18,949][WARN ][o.e.c.a.s.ShardStateAction] [node-uli] [.monitoring-es-6-2018.05.17][0] no master known for action [internal:cluster/shard/started] for shard entry [shard id [[.monitoring-es-6-2018.05.17][0]], allocation id [wC1l7zQPQ4-X2gQUxckV5g], primary term [0], message [after new shard recovery]]
+[2018-05-17T08:49:19,164][WARN ][o.e.r.f.FsRepository     ] [node-uli] The specified location [/media/DATA/Apache_ELK_Example/examples-master/kibana_nyc_restaurants/nyc_restaurants/] doesn't start with any repository paths specified by the path.repo setting: [[D:\DATA\backup2]] 
+[2018-05-17T08:49:19,271][WARN ][o.e.r.RepositoriesService] [node-uli] failed to create repository [fs][restaurants_backup]
+org.elasticsearch.repositories.RepositoryException: [restaurants_backup] location [/media/DATA/Apache_ELK_Example/examples-master/kibana_nyc_restaurants/nyc_restaurants/] doesn't match any of the locations specified by path.repo
+	at org.elasticsearch.repositories.fs.FsRepository.<init>(FsRepository.java:88) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.repositories.RepositoriesModule.lambda$new$0(RepositoriesModule.java:47) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.repositories.RepositoriesService.createRepository(RepositoriesService.java:384) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.repositories.RepositoriesService.applyClusterState(RepositoriesService.java:304) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.cluster.service.ClusterApplierService.lambda$callClusterStateAppliers$6(ClusterApplierService.java:498) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at java.lang.Iterable.forEach(Unknown Source) [?:1.8.0_161]
+	at org.elasticsearch.cluster.service.ClusterApplierService.callClusterStateAppliers(ClusterApplierService.java:495) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.cluster.service.ClusterApplierService.applyChanges(ClusterApplierService.java:482) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.cluster.service.ClusterApplierService.runTask(ClusterApplierService.java:432) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.cluster.service.ClusterApplierService$UpdateTask.run(ClusterApplierService.java:161) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingRunnable.run(ThreadContext.java:573) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:244) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:207) [elasticsearch-6.2.4.jar:6.2.4]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_161]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_161]
+[2018-05-17T08:49:19,316][WARN ][o.e.r.RepositoriesService] [node-uli] failed to create repository [restaurants_backup]
+org.elasticsearch.repositories.RepositoryException: [restaurants_backup] failed to create repository
+	at org.elasticsearch.repositories.RepositoriesService.createRepository(RepositoriesService.java:389) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.repositories.RepositoriesService.applyClusterState(RepositoriesService.java:304) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.cluster.service.ClusterApplierService.lambda$callClusterStateAppliers$6(ClusterApplierService.java:498) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at java.lang.Iterable.forEach(Unknown Source) [?:1.8.0_161]
+	at org.elasticsearch.cluster.service.ClusterApplierService.callClusterStateAppliers(ClusterApplierService.java:495) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.cluster.service.ClusterApplierService.applyChanges(ClusterApplierService.java:482) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.cluster.service.ClusterApplierService.runTask(ClusterApplierService.java:432) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.cluster.service.ClusterApplierService$UpdateTask.run(ClusterApplierService.java:161) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingRunnable.run(ThreadContext.java:573) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:244) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:207) [elasticsearch-6.2.4.jar:6.2.4]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_161]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_161]
+Caused by: org.elasticsearch.repositories.RepositoryException: [restaurants_backup] location [/media/DATA/Apache_ELK_Example/examples-master/kibana_nyc_restaurants/nyc_restaurants/] doesn't match any of the locations specified by path.repo
+	at org.elasticsearch.repositories.fs.FsRepository.<init>(FsRepository.java:88) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.repositories.RepositoriesModule.lambda$new$0(RepositoriesModule.java:47) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.repositories.RepositoriesService.createRepository(RepositoriesService.java:384) ~[elasticsearch-6.2.4.jar:6.2.4]
+	... 13 more
+[2018-05-17T08:49:21,068][INFO ][o.e.x.s.a.TokenService   ] [node-uli] refresh keys
+[2018-05-17T08:49:21,363][INFO ][o.e.x.s.a.TokenService   ] [node-uli] refreshed keys
+[2018-05-17T08:49:21,411][INFO ][o.e.g.DanglingIndicesState] [node-uli] [[restored_index_apache_elastic_example/YpRA0nQ5Ru2HLlEdKQwpAg]] dangling index exists on local file system, but not in cluster metadata, auto import to cluster state
+[2018-05-17T08:49:21,418][INFO ][o.e.l.LicenseService     ] [node-uli] license [6b276255-29b8-4ac3-801a-d0f9ace47983] mode [basic] - valid
+[2018-05-17T08:49:21,525][INFO ][o.e.x.s.t.n.SecurityNetty4HttpServerTransport] [node-uli] publish_address {192.168.50.79:9200}, bound_addresses {192.168.50.79:9200}
+[2018-05-17T08:49:21,526][INFO ][o.e.n.Node               ] [node-uli] started
+[2018-05-17T08:50:17,203][DEBUG][o.e.a.s.TransportSearchAction] [node-uli] All shards failed for phase: [query]
+[2018-05-17T08:50:17,205][WARN ][r.suppressed             ] path: /.kibana/_search, params: {ignore_unavailable=true, index=.kibana, filter_path=aggregations.types.buckets}
+org.elasticsearch.action.search.SearchPhaseExecutionException: all shards failed
+	at org.elasticsearch.action.search.AbstractSearchAsyncAction.onPhaseFailure(AbstractSearchAsyncAction.java:274) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.action.search.AbstractSearchAsyncAction.executeNextPhase(AbstractSearchAsyncAction.java:132) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.action.search.AbstractSearchAsyncAction.onPhaseDone(AbstractSearchAsyncAction.java:243) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.action.search.InitialSearchPhase.onShardFailure(InitialSearchPhase.java:107) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.action.search.InitialSearchPhase.lambda$performPhaseOnShard$4(InitialSearchPhase.java:205) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.action.search.InitialSearchPhase$1.doRun(InitialSearchPhase.java:184) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingAbstractRunnable.doRun(ThreadContext.java:672) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.common.util.concurrent.TimedRunnable.doRun(TimedRunnable.java:41) [elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37) [elasticsearch-6.2.4.jar:6.2.4]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_161]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_161]

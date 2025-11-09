@@ -1,0 +1,21 @@
+# Filebeat Beispielkonfiguration
+# ============================= Filebeat inputs ===============================
+
+filebeat.inputs:
+  # Test Logs einlesen
+  - type: filestream
+    enabled: true
+    paths:
+      - /var/log/data/SampleTextFile_10kb.txt
+    reload.enabled: true
+    reload.period: 10s
+   
+
+# ---------------------------- Elasticsearch Output ---------------------------
+output.elasticsearch:
+  # Elasticsearch-Hosts
+  hosts: ["http://es01:9200"]
+  
+  # Authentifizierung
+  username: "elastic"
+  password: "elastic1234"

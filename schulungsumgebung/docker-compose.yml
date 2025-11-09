@@ -1,0 +1,264 @@
+
+name: "modellagenten"
+services:
+  setup:
+    image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+    user: "0"
+    command: >
+      bash -c '
+        if [ x${ELASTIC_PASSWORD} == x ]; then
+          echo "Set the ELASTIC_PASSWORD environment variable in the .env file";
+          exit 1;
+        elif [ x${KIBANA_PASSWORD} == x ]; then
+          echo "Set the KIBANA_PASSWORD environment variable in the .env file";
+          exit 1;
+        fi;
+        find . -type d -exec chmod 750 \{\} \;;
+        find . -type f -exec chmod 640 \{\} \;;
+        echo "Waiting for Elasticsearch availability";
+        until curl http://es01:9200 | grep -q "missing authentication credentials"; do sleep 30; done;
+        echo "Setting kibana_system password";
+        until curl -X POST -u "elastic:${ELASTIC_PASSWORD}" -H "Content-Type: application/json" http://es01:9200/_security/user/kibana_system/_password -d "{\"password\":\"${KIBANA_PASSWORD}\"}" | grep -q "^{}"; do sleep 10; done;
+        echo "All done!";
+      '
+  es01:
+    depends_on:
+      setup:
+        condition: service_started
+    image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+    volumes:
+      - esdata01:/usr/share/elasticsearch/data
+      - eslogs:/usr/share/elasticsearch/logs
+      - ./data/log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties
+    ports:
+      - ${ES_PORT}:9200
+    environment:
+      - node.name=es01
+      - cluster.name=${CLUSTER_NAME}
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+      - bootstrap.memory_lock=true
+      - discovery.type=single-node
+      - xpack.security.enabled=true
+      - xpack.security.http.ssl.enabled=false
+      - xpack.security.transport.ssl.enabled=false
+      - xpack.license.self_generated.type=${LICENSE}
+      - xpack.ml.use_auto_machine_memory_percent=true
+    mem_limit: ${MEM_LIMIT}
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl http://localhost:9200 | grep -q 'missing authentication credentials'",
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 120
+
+  kibana:
+    depends_on:
+      es01:
+        condition: service_healthy
+    image: docker.elastic.co/kibana/kibana:${STACK_VERSION}
+    user: "0"
+    volumes:
+      - kibanadata:/usr/share/kibana/data
+      - kibanalogs:/var/log/kibana
+      - ./data/kibana.yml:/usr/share/kibana/config/kibana.yml
+    command: ["/usr/share/kibana/bin/kibana", "--allow-root"]
+    ports:
+      - ${KIBANA_PORT}:5601
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -s -I http://localhost:5601 | grep -q 'HTTP/1.1 302 Found'",
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 120
+  
+  filebeat:
+    depends_on:
+      es01:
+        condition: service_healthy
+      kibana:
+        condition: service_healthy
+    image: docker.elastic.co/beats/filebeat:${STACK_VERSION}
+    user: root
+    volumes:
+      - ./configs/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - ./data:/var/log/data:ro
+      - filebeat-data:/usr/share/filebeat/data
+    environment:
+      - ELASTICSEARCH_HOSTS=http://es01:9200
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}
+      - KIBANA_HOST=http://kibana:5601
+
+  logstash:
+    depends_on:
+      es01:
+        condition: service_healthy
+    image: docker.elastic.co/logstash/logstash:${STACK_VERSION}
+    volumes:
+      - ./data/configs/logstash/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
+      - ./data/configs/logstash/conf.d:/usr/share/logstash/pipeline:ro
+      - ./data:/var/log/data:ro
+      - logstash-data:/usr/share/logstash/data
+    ports:
+      - ${LOGSTASH_PORT:-5044}:5044
+      - ${LOGSTASH_MONITOR_PORT:-9600}:9600
+    environment:
+      - ELASTICSEARCH_HOSTS=http://es01:9200
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}
+      - xpack.monitoring.enabled=true
+      - xpack.monitoring.elasticsearch.hosts=http://es01:9200
+      - xpack.monitoring.elasticsearch.username=elastic
+      - xpack.monitoring.elasticsearch.password=${ELASTIC_PASSWORD}
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -s http://localhost:9600/_node/stats | grep -q '\"status\":\"green\"'"
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 30
+
+  
+  fleet-server:
+    depends_on:
+      kibana:
+        condition: service_healthy
+    image: docker.elastic.co/elastic-agent/elastic-agent:${STACK_VERSION}
+    hostname: fleet-server
+    user: "0"
+    volumes:
+      - fleet-data:/usr/share/elastic-agent/state
+    ports:
+      - ${FLEET_PORT:-8220}:8220
+    environment:
+        - FLEET_ENROLL=1
+        - FLEET_SERVER_POLICY_ID=fleet-server-policy
+        - FLEET_SERVER_ENABLE=1
+        - FLEET_SERVER_HOST=0.0.0.0
+        - FLEET_SERVER_PORT=8220
+        - FLEET_INSECURE=true
+        - KIBANA_FLEET_SETUP=1
+        - KIBANA_HOST=http://kibana:5601
+        - FLEET_URL=http://fleet-server:8220
+        - FLEET_SERVER_ELASTICSEARCH_HOST=http://es01:9200
+        - FLEET_SERVER_INSECURE_HTTP=true
+        - KIBANA_FLEET_USERNAME=elastic
+        - KIBANA_FLEET_PASSWORD=${ELASTIC_PASSWORD}
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl http://localhost:8220/api/status | grep -q HEALTHY"
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+
+  fleet-policy-setup:
+    depends_on:
+      fleet-server:
+        condition: service_healthy
+    image: curlimages/curl:latest
+    user: "0"
+    volumes:
+      - ./data/setup-fleet-policies.sh:/setup-fleet-policies.sh:ro
+    environment:
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+    command: >
+      sh /setup-fleet-policies.sh
+
+  pipeline-updater:
+    depends_on:
+      fleet-policy-setup:
+        condition: service_completed_successfully
+    image: curlimages/curl:latest
+    user: "0"
+    volumes:
+      - ./data/update-ingest-pipeline.sh:/update-ingest-pipeline.sh:ro
+    environment:
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+    command: >
+      sh /update-ingest-pipeline.sh
+
+  fleet-token-fetcher:
+    depends_on:
+      fleet-server:
+        condition: service_healthy
+      fleet-policy-setup:
+        condition: service_completed_successfully
+    image: curlimages/curl:latest
+    user: "0"
+    volumes:
+      - ./data/get-fleet-enrollment-token.sh:/get-fleet-enrollment-token.sh:ro
+      - fleet-token:/tmp
+    environment:
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+    command: >
+      sh /get-fleet-enrollment-token.sh
+
+  elastic-agent-monitoring:
+    depends_on:
+      fleet-server:
+        condition: service_healthy
+      pipeline-updater:
+        condition: service_completed_successfully
+      fleet-token-fetcher:
+        condition: service_completed_successfully
+    image: docker.elastic.co/elastic-agent/elastic-agent:${STACK_VERSION}
+    hostname: elastic-agent-monitoring
+    user: "0"
+    volumes:
+      - elastic-agent-data:/usr/share/elastic-agent/state
+      - eslogs:/var/log/elasticsearch:ro
+      - kibanalogs:/var/log/kibana:ro
+      - fleet-token:/tmp:ro
+    entrypoint: >
+      bash -c '
+        if [ ! -f /tmp/fleet-enrollment-token ]; then
+          echo "ERROR: Fleet enrollment token file not found";
+          exit 1;
+        fi;
+        export FLEET_ENROLLMENT_TOKEN=$$(cat /tmp/fleet-enrollment-token);
+        echo "Using dynamically fetched enrollment token";
+        exec /usr/bin/tini -- /usr/local/bin/docker-entrypoint -e;
+      '
+    environment:
+      - FLEET_ENROLL=1
+      - FLEET_URL=http://fleet-server:8220
+      - ELASTIC_AGENT_TAGS=monitoring,elasticsearch,kibana
+      - FLEET_INSECURE=true
+      - KIBANA_FLEET_HOST=http://kibana:5601
+      - KIBANA_FLEET_USERNAME=elastic
+      - KIBANA_FLEET_PASSWORD=${ELASTIC_PASSWORD}
+
+volumes:
+  esdata01:
+    driver: local
+  eslogs:
+    driver: local
+  kibanadata:
+    driver: local
+  kibanalogs:
+    driver: local
+  filebeat-data:
+    driver: local
+  logstash-data:
+    driver: local
+  fleet-data:
+    driver: local
+  fleet-token:
+    driver: local
+  elastic-agent-data:
+    driver: local
