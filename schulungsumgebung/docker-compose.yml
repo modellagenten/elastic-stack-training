@@ -90,7 +90,7 @@ services:
     image: docker.elastic.co/beats/filebeat:${STACK_VERSION}
     user: root
     volumes:
-      - ./configs/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - ./configs/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
       - ./data:/var/log/data:ro
       - filebeat-data:/usr/share/filebeat/data
     environment:
@@ -98,6 +98,7 @@ services:
       - ELASTICSEARCH_USERNAME=elastic
       - ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}
       - KIBANA_HOST=http://kibana:5601
+      - BEAT_STRICT_PERMS=false
 
   logstash:
     depends_on:
@@ -105,8 +106,8 @@ services:
         condition: service_healthy
     image: docker.elastic.co/logstash/logstash:${STACK_VERSION}
     volumes:
-      - ./data/configs/logstash/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
-      - ./data/configs/logstash/conf.d:/usr/share/logstash/pipeline:ro
+      - ./configs/logstash/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
+      - ./configs/logstash/conf.d:/usr/share/logstash/pipeline:ro
       - ./data:/var/log/data:ro
       - logstash-data:/usr/share/logstash/data
     ports:
@@ -170,27 +171,27 @@ services:
     depends_on:
       fleet-server:
         condition: service_healthy
-    image: curlimages/curl:latest
-    user: "0"
+    image: alpine:latest
     volumes:
       - ./data/setup-fleet-policies.sh:/setup-fleet-policies.sh:ro
     environment:
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+    entrypoint: /bin/sh
     command: >
-      sh /setup-fleet-policies.sh
+      -c "apk add --no-cache curl dos2unix > /dev/null 2>&1 && dos2unix -n /setup-fleet-policies.sh /tmp/script.sh && sh /tmp/script.sh"
 
   pipeline-updater:
     depends_on:
       fleet-policy-setup:
         condition: service_completed_successfully
-    image: curlimages/curl:latest
-    user: "0"
+    image: alpine:latest
     volumes:
       - ./data/update-ingest-pipeline.sh:/update-ingest-pipeline.sh:ro
     environment:
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+    entrypoint: /bin/sh
     command: >
-      sh /update-ingest-pipeline.sh
+      -c "apk add --no-cache curl bash dos2unix > /dev/null 2>&1 && dos2unix -n /update-ingest-pipeline.sh /tmp/script.sh && bash /tmp/script.sh"
 
   fleet-token-fetcher:
     depends_on:
@@ -198,15 +199,15 @@ services:
         condition: service_healthy
       fleet-policy-setup:
         condition: service_completed_successfully
-    image: curlimages/curl:latest
-    user: "0"
+    image: alpine:latest
     volumes:
       - ./data/get-fleet-enrollment-token.sh:/get-fleet-enrollment-token.sh:ro
       - fleet-token:/tmp
     environment:
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+    entrypoint: /bin/sh
     command: >
-      sh /get-fleet-enrollment-token.sh
+      -c "apk add --no-cache curl dos2unix > /dev/null 2>&1 && dos2unix -n /get-fleet-enrollment-token.sh /var/tmp/script.sh && sh /var/tmp/script.sh"
 
   elastic-agent-monitoring:
     depends_on:
