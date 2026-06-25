@@ -173,7 +173,7 @@ services:
         condition: service_healthy
     image: alpine:latest
     volumes:
-      - ./data/setup-fleet-policies.sh:/setup-fleet-policies.sh:ro
+      - ./scripts/setup-fleet-policies.sh:/setup-fleet-policies.sh:ro
     environment:
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
     entrypoint: /bin/sh
@@ -186,7 +186,7 @@ services:
         condition: service_completed_successfully
     image: alpine:latest
     volumes:
-      - ./data/update-ingest-pipeline.sh:/update-ingest-pipeline.sh:ro
+      - ./scripts/update-ingest-pipeline.sh:/update-ingest-pipeline.sh:ro
     environment:
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
     entrypoint: /bin/sh
@@ -201,7 +201,7 @@ services:
         condition: service_completed_successfully
     image: alpine:latest
     volumes:
-      - ./data/get-fleet-enrollment-token.sh:/get-fleet-enrollment-token.sh:ro
+      - ./scripts/get-fleet-enrollment-token.sh:/get-fleet-enrollment-token.sh:ro
       - fleet-token:/tmp
     environment:
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
