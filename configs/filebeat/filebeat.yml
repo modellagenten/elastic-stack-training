@@ -1,0 +1,57 @@
+# Filebeat Beispielkonfiguration
+# ============================= Filebeat inputs ===============================
+
+filebeat.inputs:
+  # Test Logs einlesen
+  - type: filestream
+    enabled: true
+    paths:
+      - /var/log/data/SampleTextFile_10kb.txt
+    reload.enabled: true
+    reload.period: 10s
+
+  # Logs des Generators (docker compose --profile generator up -d loggen)
+  # Zum Aktivieren die Kommentarzeichen entfernen.
+  #- type: filestream
+  #  id: loggen-text
+  #  paths:
+  #    - /var/log/data/generated/apache-access.log
+  #    - /var/log/data/generated/auth.log
+  #    - /var/log/data/generated/syslog.log
+  #    - /var/log/data/generated/firewall-kv.log
+  #  fields:
+  #    source_type: loggen
+  #
+  # Java-Logs: Stacktraces gehören zur vorherigen Zeile (Multiline)
+  #- type: filestream
+  #  id: loggen-java
+  #  paths:
+  #    - /var/log/data/generated/app-java.log
+  #  parsers:
+  #    - multiline:
+  #        type: pattern
+  #        pattern: '^\d{4}-\d{2}-\d{2} '
+  #        negate: true
+  #        match: after
+  #
+  # JSON-Zeilen direkt als Felder übernehmen
+  #- type: filestream
+  #  id: loggen-json
+  #  paths:
+  #    - /var/log/data/generated/nginx-access.json
+  #    - /var/log/data/generated/loggen-scenarios.log
+  #  parsers:
+  #    - ndjson:
+  #        target: ""
+  #        overwrite_keys: true
+  #        add_error_key: true
+
+
+# ---------------------------- Elasticsearch Output ---------------------------
+output.elasticsearch:
+  # Elasticsearch-Hosts
+  hosts: ["http://es01:9200"]
+  
+  # Authentifizierung
+  username: "elastic"
+  password: "elastic1234"

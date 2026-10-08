@@ -1,3 +1,4 @@
-# ignore the folders folien and sprints
-folien/
-sprints/
+data/generated/
+__pycache__/
+*.pyc
+.env

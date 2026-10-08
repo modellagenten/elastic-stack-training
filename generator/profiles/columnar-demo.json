@@ -1,0 +1,17 @@
+{
+  "description": "Großer ECS-Datensatz (50 Hosts, 20 Services) mit verschachtelten Objekten, Tag-Arrays und Array of Objects für den Vergleich standard / logsdb / logsdb_columnar",
+  "rate": 200,
+  "diurnal": true,
+  "demo_fields": true,
+  "hosts": {"web": 20, "app": 20, "db": 8, "fw": 2},
+  "services": 20,
+  "clients": 5000,
+  "targets": ["logs-demo.standard-default", "logs-demo.logsdb-default", "logs-demo.columnar-default"],
+  "streams": [
+    {"name": "http",     "kind": "http",     "format": "ecs_json", "file": "demo-http.ecs.json",     "weight": 50},
+    {"name": "app",      "kind": "app",      "format": "ecs_json", "file": "demo-app.ecs.json",      "weight": 25},
+    {"name": "auth",     "kind": "auth",     "format": "ecs_json", "file": "demo-auth.ecs.json",     "weight": 5},
+    {"name": "syslog",   "kind": "syslog",   "format": "ecs_json", "file": "demo-syslog.ecs.json",   "weight": 10},
+    {"name": "firewall", "kind": "firewall", "format": "ecs_json", "file": "demo-firewall.ecs.json", "weight": 10}
+  ]
+}

@@ -1,0 +1,100 @@
+2025-12-01 08:15:23,123 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2025-12-01 08:15:23,456 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 48) WFLYSEC0002: Activating Security Subsystem
+2025-12-01 08:15:23,789 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2025-12-01 08:15:24,012 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: JBoss EAP 7.4.0.GA (WildFly Core 15.0.1.Final-redhat-00001) started in 2345ms
+2025-12-01 08:15:24,234 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "myapp.war" (runtime-name: "myapp.war")
+2025-12-01 08:15:25,567 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment myapp.war
+2025-12-01 08:15:26,890 INFO  [org.jboss.as.jpa] (MSC service thread 1-4) WFLYJPA0002: Starting Persistence Unit (phase 1 of 2) Service 'myapp.war#myappPU'
+2025-12-01 08:15:27,123 INFO  [org.hibernate.jpa.internal.util.LogHelper] (MSC service thread 1-4) HHH000204: Processing PersistenceUnitInfo [name: myappPU]
+2025-12-01 08:15:27,456 INFO  [org.hibernate.Version] (MSC service thread 1-4) HHH000412: Hibernate ORM core version 5.3.20.Final
+2025-12-01 08:15:28,789 INFO  [org.hibernate.annotations.common.Version] (MSC service thread 1-4) HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2025-12-01 08:15:29,012 INFO  [org.hibernate.dialect.Dialect] (MSC service thread 1-4) HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-12-01 08:15:29,345 INFO  [org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl] (MSC service thread 1-4) HHH000422: HHH000422: Hibernate is using deprecated java.sql.Clob APIs
+2025-12-01 08:15:30,678 INFO  [org.jboss.as.jpa] (MSC service thread 1-4) WFLYJPA0002: Starting Persistence Unit (phase 2 of 2) Service 'myapp.war#myappPU'
+2025-12-01 08:15:31,901 INFO  [org.jboss.resteasy.spi.ResteasyDeployment] (MSC service thread 1-5) RESTEASY003225: Deploying javax.ws.rs.core.Application: class com.myapp.rest.ApplicationConfig
+2025-12-01 08:15:32,234 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "myapp.war" (runtime-name: "myapp.war") started in 8000ms
+2025-12-01 09:22:15,456 INFO  [com.myapp.service.UserService] (default task-1) User login successful: username=john.doe@example.com
+2025-12-01 09:22:16,789 INFO  [com.myapp.controller.UserController] (default task-1) GET /api/users/12345 - 200 OK - Response time: 45ms
+2025-12-01 09:22:17,123 INFO  [com.myapp.service.OrderService] (default task-2) Processing order #ORD-2025-001234
+2025-12-01 09:22:18,456 INFO  [com.myapp.integration.PaymentGateway] (default task-2) Payment processed successfully: transaction_id=PAY-789456123
+2025-12-01 09:22:19,789 WARN  [com.myapp.service.CacheService] (default task-3) Cache miss for key: user:12345:profile
+2025-12-01 09:22:20,123 INFO  [com.myapp.service.OrderService] (default task-2) Order #ORD-2025-001234 completed successfully
+2025-12-01 09:22:21,456 INFO  [com.myapp.controller.OrderController] (default task-2) POST /api/orders - 201 Created - Response time: 234ms
+2025-12-01 09:23:45,789 DEBUG [com.myapp.util.QueryBuilder] (default task-4) Executing query: SELECT * FROM orders WHERE status = 'PENDING' AND created_at > '2025-12-01'
+2025-12-01 09:23:46,123 INFO  [com.myapp.service.ReportService] (default task-4) Generating daily sales report for 2025-12-01
+2025-12-01 09:23:47,456 INFO  [com.myapp.service.ReportService] (default task-4) Report generated successfully: report_id=REP-2025-1201-001
+2025-12-01 09:24:12,789 INFO  [com.myapp.controller.ReportController] (default task-4) GET /api/reports/daily/2025-12-01 - 200 OK - Response time: 1890ms
+2025-12-01 10:15:33,123 ERROR [com.myapp.service.EmailService] (default task-5) Failed to send email to user@example.com: Connection timeout after 30 seconds
+2025-12-01 10:15:33,456 WARN  [com.myapp.service.EmailService] (default task-5) Retrying email send (attempt 1/3)
+2025-12-01 10:15:45,789 INFO  [com.myapp.service.EmailService] (default task-5) Email sent successfully on retry attempt 1
+2025-12-01 10:16:22,123 INFO  [com.myapp.integration.ExternalAPI] (default task-6) Calling external API: GET https://api.external.com/v1/data?userId=12345
+2025-12-01 10:16:23,456 INFO  [com.myapp.integration.ExternalAPI] (default task-6) External API response: 200 OK - Response time: 234ms
+2025-12-01 10:17:55,789 WARN  [com.myapp.service.ValidationService] (default task-7) Validation warning: Order total amount exceeds user credit limit by $150.00
+2025-12-01 10:17:56,123 INFO  [com.myapp.service.OrderService] (default task-7) Order #ORD-2025-001235 rejected due to credit limit
+2025-12-01 10:17:57,456 INFO  [com.myapp.controller.OrderController] (default task-7) POST /api/orders - 400 Bad Request - Response time: 89ms
+2025-12-01 10:18:33,789 ERROR [com.myapp.service.DatabaseService] (default task-8) Database connection pool exhausted: active=50, max=50
+2025-12-01 10:18:34,123 WARN  [com.myapp.service.DatabaseService] (default task-8) Waiting for available database connection...
+2025-12-01 10:18:35,456 INFO  [com.myapp.service.DatabaseService] (default task-8) Database connection acquired after 1333ms wait
+2025-12-01 10:19:12,789 INFO  [com.myapp.service.AuditService] (default task-9) Audit log: user=admin@example.com, action=UPDATE_USER, resource=user:67890, timestamp=2025-12-01T10:19:12.789Z
+2025-12-01 10:19:13,123 INFO  [com.myapp.service.UserService] (default task-9) User profile updated: user_id=67890
+2025-12-01 10:19:14,456 INFO  [com.myapp.controller.UserController] (default task-9) PUT /api/users/67890 - 200 OK - Response time: 167ms
+2025-12-01 11:05:22,789 DEBUG [com.myapp.util.SecurityUtils] (default task-10) JWT token validated successfully: subject=john.doe@example.com, expires=2025-12-01T12:00:00Z
+2025-12-01 11:05:23,123 INFO  [com.myapp.service.AuthorizationService] (default task-10) User authorized for resource: /api/users/12345, role=USER
+2025-12-01 11:05:24,456 INFO  [com.myapp.controller.UserController] (default task-10) GET /api/users/12345 - 200 OK - Response time: 23ms
+2025-12-01 11:06:45,789 INFO  [com.myapp.service.NotificationService] (default task-11) Sending push notification to device: device_id=DEV-ABC123, user_id=12345
+2025-12-01 11:06:46,123 INFO  [com.myapp.service.NotificationService] (default task-11) Push notification sent successfully
+2025-12-01 11:07:22,456 INFO  [com.myapp.service.FileService] (default task-12) File uploaded: filename=report_2025-12-01.pdf, size=2456789 bytes, user_id=12345
+2025-12-01 11:07:23,789 INFO  [com.myapp.controller.FileController] (default task-12) POST /api/files/upload - 201 Created - Response time: 456ms
+2025-12-01 11:08:15,123 WARN  [com.myapp.service.CacheService] (default task-13) Cache eviction: removed 150 entries due to memory pressure
+2025-12-01 11:08:16,456 INFO  [com.myapp.service.CacheService] (default task-13) Cache statistics: size=850, hit_rate=0.87, miss_rate=0.13
+2025-12-01 11:09:33,789 ERROR [com.myapp.integration.ExternalAPI] (default task-14) External API error: 503 Service Unavailable - Retrying in 5 seconds
+2025-12-01 11:09:38,123 INFO  [com.myapp.integration.ExternalAPI] (default task-14) External API recovered: 200 OK on retry attempt 1
+2025-12-01 11:10:22,456 INFO  [com.myapp.service.BatchService] (scheduled-task-1) Starting scheduled batch job: daily-report-generation
+2025-12-01 11:10:23,789 INFO  [com.myapp.service.BatchService] (scheduled-task-1) Batch job completed: processed=1250 records, failed=0, duration=1234ms
+2025-12-01 11:11:15,123 INFO  [com.myapp.service.MetricsService] (metrics-collector-1) Metrics collected: cpu_usage=45.2%, memory_usage=68.5%, active_threads=23
+2025-12-01 11:11:16,456 INFO  [com.myapp.service.MetricsService] (metrics-collector-1) Metrics published to monitoring system
+2025-12-01 12:00:00,789 INFO  [com.myapp.service.SchedulerService] (scheduled-task-2) Executing scheduled task: cleanup-old-sessions
+2025-12-01 12:00:01,123 INFO  [com.myapp.service.SchedulerService] (scheduled-task-2) Cleaned up 45 expired sessions
+2025-12-01 12:00:02,456 INFO  [com.myapp.service.SchedulerService] (scheduled-task-2) Scheduled task completed successfully
+2025-12-01 12:15:33,789 INFO  [com.myapp.service.SearchService] (default task-15) Search query executed: query="laptop", results=234, duration=89ms
+2025-12-01 12:15:34,123 INFO  [com.myapp.controller.SearchController] (default task-15) GET /api/search?q=laptop - 200 OK - Response time: 92ms
+2025-12-01 12:16:22,456 WARN  [com.myapp.service.ValidationService] (default task-16) Input validation warning: email format suspicious: test@test
+2025-12-01 12:16:23,789 INFO  [com.myapp.service.UserService] (default task-16) User registration attempt: email=test@test, status=VALIDATION_FAILED
+2025-12-01 12:16:24,123 INFO  [com.myapp.controller.UserController] (default task-16) POST /api/users/register - 400 Bad Request - Response time: 45ms
+2025-12-01 12:17:45,456 INFO  [com.myapp.service.PaymentService] (default task-17) Processing payment: order_id=ORD-2025-001236, amount=299.99, currency=EUR
+2025-12-01 12:17:46,789 INFO  [com.myapp.integration.PaymentGateway] (default task-17) Payment authorized: transaction_id=PAY-987654321
+2025-12-01 12:17:47,123 INFO  [com.myapp.service.PaymentService] (default task-17) Payment processed successfully: transaction_id=PAY-987654321
+2025-12-01 12:18:22,456 INFO  [com.myapp.service.OrderService] (default task-17) Order #ORD-2025-001236 status updated: PENDING -> PAID
+2025-12-01 12:18:23,789 INFO  [com.myapp.controller.OrderController] (default task-17) PUT /api/orders/ORD-2025-001236/status - 200 OK - Response time: 78ms
+2025-12-01 12:19:15,123 ERROR [com.myapp.service.DatabaseService] (default task-18) SQLException: Connection reset by peer
+java.sql.SQLException: Connection reset by peer
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2673)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2363)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:167)
+	at com.myapp.service.DatabaseService.executeQuery(DatabaseService.java:123)
+2025-12-01 12:19:16,456 WARN  [com.myapp.service.DatabaseService] (default task-18) Retrying database operation (attempt 1/3)
+2025-12-01 12:19:17,789 INFO  [com.myapp.service.DatabaseService] (default task-18) Database operation succeeded on retry attempt 1
+2025-12-01 12:20:33,123 INFO  [com.myapp.service.ExportService] (default task-19) Exporting data to CSV: filename=export_2025-12-01.csv, records=5000
+2025-12-01 12:20:34,456 INFO  [com.myapp.service.ExportService] (default task-19) CSV export completed successfully: file_size=2456789 bytes
+2025-12-01 12:20:35,789 INFO  [com.myapp.controller.ExportController] (default task-19) GET /api/export/csv?date=2025-12-01 - 200 OK - Response time: 1234ms
+2025-12-01 12:21:22,123 INFO  [com.myapp.service.WebSocketService] (websocket-handler-1) WebSocket connection established: session_id=WS-2025-1201-001, user_id=12345
+2025-12-01 12:21:23,456 INFO  [com.myapp.service.WebSocketService] (websocket-handler-1) WebSocket message received: type=CHAT_MESSAGE, size=256 bytes
+2025-12-01 12:22:15,789 INFO  [com.myapp.service.WebSocketService] (websocket-handler-1) WebSocket message broadcasted to 5 connected clients
+2025-12-01 12:23:45,123 INFO  [com.myapp.service.HealthCheckService] (health-check-1) Health check: status=HEALTHY, database=UP, cache=UP, external_api=UP
+2025-12-01 12:23:46,456 INFO  [com.myapp.controller.HealthController] (health-check-1) GET /api/health - 200 OK - Response time: 12ms
+2025-12-01 13:05:22,789 INFO  [com.myapp.service.BackupService] (backup-task-1) Starting daily backup: backup_id=BACKUP-2025-12-01-001
+2025-12-01 13:05:23,123 INFO  [com.myapp.service.BackupService] (backup-task-1) Backup completed successfully: size=1234567890 bytes, duration=45678ms
+2025-12-01 13:06:15,456 INFO  [com.myapp.service.BackupService] (backup-task-1) Backup uploaded to S3: bucket=myapp-backups, key=backups/2025-12-01/BACKUP-2025-12-01-001.tar.gz
+2025-12-01 13:07:33,789 WARN  [com.myapp.service.ResourceService] (default task-20) Resource usage high: cpu=85.3%, memory=92.1%
+2025-12-01 13:07:34,123 INFO  [com.myapp.service.ResourceService] (default task-20) Triggering garbage collection to free memory
+2025-12-01 13:07:35,456 INFO  [com.myapp.service.ResourceService] (default task-20) Garbage collection completed: freed=234567890 bytes
+2025-12-01 13:08:22,789 INFO  [com.myapp.service.QueueService] (queue-processor-1) Processing queue: queue_name=email-queue, messages=45
+2025-12-01 13:08:23,123 INFO  [com.myapp.service.QueueService] (queue-processor-1) Queue processing completed: processed=45, failed=0, duration=1234ms
+2025-12-01 13:09:15,456 INFO  [com.myapp.service.QueueService] (queue-processor-2) Processing queue: queue_name=notification-queue, messages=123
+2025-12-01 13:09:16,789 INFO  [com.myapp.service.QueueService] (queue-processor-2) Queue processing completed: processed=123, failed=0, duration=2345ms
+2025-12-01 13:10:33,123 ERROR [com.myapp.service.IntegrationService] (default task-21) Integration error: Failed to authenticate with external service
+com.myapp.exception.IntegrationException: Authentication failed: Invalid API key
+	at com.myapp.integration.ExternalService.authenticate(ExternalService.java:45)

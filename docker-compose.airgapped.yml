@@ -1,0 +1,9 @@
+services:
+  kibana:
+    environment:
+      - FLEET_AIRGAPPED=true
+    volumes:
+      - ./fleet-packages/system-3.0.0.zip:/usr/share/kibana/node_modules/@kbn/fleet-plugin/target/bundled_packages/system-3.0.0.zip:ro
+      - ./fleet-packages/elasticsearch-1.23.2.zip:/usr/share/kibana/node_modules/@kbn/fleet-plugin/target/bundled_packages/elasticsearch-1.23.2.zip:ro
+      - ./fleet-packages/kibana-2.9.0.zip:/usr/share/kibana/node_modules/@kbn/fleet-plugin/target/bundled_packages/kibana-2.9.0.zip:ro
+      - ./fleet-packages/windows-3.10.0.zip:/usr/share/kibana/node_modules/@kbn/fleet-plugin/target/bundled_packages/windows-3.10.0.zip:ro

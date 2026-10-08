@@ -1,0 +1,10 @@
+# Logstash Pipelines Configuration
+# Definiert die verschiedenen Pipelines, die Logstash verarbeiten soll
+
+- pipeline.id: main
+  path.config: "/usr/share/logstash/pipeline/*.conf"
+  pipeline.workers: 2
+  pipeline.batch.size: 125
+  pipeline.batch.delay: 50
+  queue.type: memory
+

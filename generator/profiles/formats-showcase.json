@@ -1,0 +1,19 @@
+{
+  "description": "Jedes Format einmal - für Parsing-Übungen mit Filebeat, Logstash (grok, kv, csv, json) und Multiline",
+  "rate": 5,
+  "diurnal": false,
+  "hosts": {"web": 2, "app": 2, "db": 1, "fw": 1},
+  "services": 8,
+  "clients": 100,
+  "streams": [
+    {"name": "apache",     "kind": "http",     "format": "apache",     "file": "showcase-apache.log",     "weight": 2},
+    {"name": "nginx",      "kind": "http",     "format": "nginx_json", "file": "showcase-nginx.json",     "weight": 1},
+    {"name": "csv",        "kind": "http",     "format": "csv",        "file": "showcase-access.csv",     "weight": 1},
+    {"name": "java",       "kind": "app",      "format": "java",       "file": "showcase-java.log",       "weight": 2},
+    {"name": "auth",       "kind": "auth",     "format": "auth",       "file": "showcase-auth.log",       "weight": 1},
+    {"name": "syslog",     "kind": "syslog",   "format": "syslog",     "file": "showcase-syslog.log",     "weight": 1},
+    {"name": "syslog5424", "kind": "syslog",   "format": "syslog5424", "file": "showcase-syslog5424.log", "weight": 1},
+    {"name": "kv",         "kind": "firewall", "format": "kv",         "file": "showcase-firewall.log",   "weight": 1},
+    {"name": "ecs",        "kind": "app",      "format": "ecs_json",   "file": "showcase-app.ecs.json",   "weight": 1}
+  ]
+}

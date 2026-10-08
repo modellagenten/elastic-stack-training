@@ -1,0 +1,16 @@
+{
+  "description": "Kleine Shop-Umgebung mit Web-, App-, DB-Hosts und Firewall - Grundrauschen für Alerting-Übungen",
+  "rate": 10,
+  "diurnal": true,
+  "hosts": {"web": 3, "app": 3, "db": 2, "fw": 1},
+  "services": 10,
+  "clients": 400,
+  "streams": [
+    {"name": "access",   "kind": "http",     "format": "apache",     "file": "apache-access.log", "weight": 35},
+    {"name": "nginx",    "kind": "http",     "format": "nginx_json", "file": "nginx-access.json", "weight": 10},
+    {"name": "app",      "kind": "app",      "format": "java",       "file": "app-java.log",      "weight": 20},
+    {"name": "auth",     "kind": "auth",     "format": "auth",       "file": "auth.log",          "weight": 8},
+    {"name": "syslog",   "kind": "syslog",   "format": "syslog",     "file": "syslog.log",        "weight": 12},
+    {"name": "firewall", "kind": "firewall", "format": "kv",         "file": "firewall-kv.log",   "weight": 15}
+  ]
+}
